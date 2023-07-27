@@ -1,5 +1,3 @@
-from django.shortcuts import render
-
 # Create your views here.
 
 from django.shortcuts import render
@@ -9,3 +7,6 @@ def mainpage(request):
 
 def company(request):
     return render(request,'pages/company_info.html')
+
+def reviews(request):
+    return render(request,'pages/reviews.html')
