@@ -8,9 +8,9 @@
                 <div class="col-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0" src="../static/assets/Bean2Cup.png" alt="..." /></div>
                 <div class="col-lg-5">
                     <h1 class="font-weight-light">Flavor makes you happy.</h1>
-                    <p>{{ content.content | truncatewords:30 }}</p>
+                    <p>{{ content.content|truncatewords:30 }}</p>
                     <a class="btn btn-primary" href="/mysite/1">상품 상세보기</a>
-                    <!--해당 부분에서 href="{% url 'detail' content.id %}", 주소 작동 불가>-->
+                    <!--해당 부분에서 href=% url 'detail' content.id %, 주소 작동 불가>-->
                 </div>
             </div>
             <!-- Call to Action-->
