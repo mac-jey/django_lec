@@ -1,13 +1,18 @@
 from django.contrib import admin
 from .models import MainContent
-
-# Register your models here.
-admin.site.register(MainContent)
+from .models import Comment
 
 
-from django.contrib import auth
-from django.contrib.auth import login, authenticate
-from django.contrib.auth.models import User
-from django.shortcuts import render, redirect
+class MainContentAdmin(admin.ModelAdmin): 
+    list_display = ['title', 'content', 'pub_date'] 
+    search_fields = ['title'] 
+    
+class CommentAdmin(admin.ModelAdmin): 
+    list_display = ['content_list', 'content', 'author', 'create_date', 'modify_date'] 
+    search_fields = ['author']
 
-#Create your views here.
+
+admin.site.register(MainContent,MainContentAdmin)
+admin.site.register(Comment,CommentAdmin)
+
+

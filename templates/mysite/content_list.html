@@ -4,15 +4,16 @@
          <!-- Page Content-->
         <div class="container px-4 px-lg-5">
             <!-- Heading Row-->
+            {% for content in content_list %}
             <div class="row gx-4 gx-lg-5 align-items-center my-5">
-                <div class="col-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0" src="../static/assets/Bean2Cup.png" alt="..." /></div>
+                        <div class="col-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0" src="../static/assets/Bean2Cup.png" alt="..." /></div>
                 <div class="col-lg-5">
                     <h1 class="font-weight-light">Flavor makes you happy.</h1>
                     <p>{{ content.content|truncatewords:30 }}</p>
-                    <a class="btn btn-primary" href="/mysite/1">상품 상세보기</a>
-                    <!--해당 부분에서 href=% url 'detail' content.id %, 주소 작동 불가>-->
+                    <a class="btn btn-primary" href="{% url 'detail' content.id %}">상품 상세보기</a>
                 </div>
             </div>
+            {% endfor %}
             <!-- Call to Action-->
             <div class="card text-white bg-secondary my-5 py-4 text-center">
                 <div class="card-body"><p class="text-white m-0">Anytime anywhere, coffee with you!!</p></div>
